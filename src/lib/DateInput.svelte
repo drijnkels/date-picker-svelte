@@ -3,6 +3,7 @@
   import { cubicInOut } from 'svelte/easing'
   import { toText } from './date-utils'
   import type { Locale } from './locale'
+  import type { dataAttr } from './dataAttr'
   import { parse, createFormat } from './parse'
   import type { FormatToken } from './parse'
   import DateTimePicker from './DatePicker.svelte'
@@ -47,10 +48,7 @@
   export let inputName = 'svelteDateInput'
 
   /** Dynamically set data attributes on the input field */
-  type dataAttr = {
-    name: string
-    value: string
-  }
+  
   export let dataAttrs: Array<dataAttr> = []
   onMount(() => {
     const inputElement = document.querySelector('.date-time-field input')

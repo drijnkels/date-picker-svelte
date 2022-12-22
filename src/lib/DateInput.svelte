@@ -48,9 +48,9 @@
   export let inputName = 'svelteDateInput'
 
   /** Dynamically set data attributes on the input field */
-  
+
   export let dataAttrs: Array<dataAttr> = []
-  let inputElement: Element;
+  let inputElement: Element
   onMount(() => {
     for (let dataAttr of dataAttrs) {
       if (inputElement != null) {

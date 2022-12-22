@@ -50,8 +50,8 @@
   /** Dynamically set data attributes on the input field */
   
   export let dataAttrs: Array<dataAttr> = []
+  let inputElement: Element;
   onMount(() => {
-    const inputElement = document.querySelector('.date-time-field input')
     for (let dataAttr of dataAttrs) {
       if (inputElement != null) {
         inputElement.setAttribute('data-' + dataAttr.name, dataAttr.value)
@@ -160,6 +160,7 @@
 
 <div class="date-time-field" on:focusout={onFocusOut} on:keydown={keydown}>
   <input
+    bind:this={inputElement}
     class:invalid={!valid}
     type="text"
     name={inputName}
